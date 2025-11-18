@@ -14,6 +14,7 @@ ifeq "$(strip $(PANDOC))" ''
 	ifneq "$(strip $(DOCKER))" ''
 		PANDOC = $(DOCKER) run \
 			--rm \
+
 			-v "$(CURDIR)/:/workdir/:ro" \
 			-v "$(CURDIR)/$(OUTPUT_DIRNAME)/:/workdir/$(OUTPUT_DIRNAME)/" \
 			-u "$(shell id -u):$(shell id -g)" \
